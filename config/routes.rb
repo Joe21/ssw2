@@ -1,7 +1,7 @@
 Ssw2::Application.routes.draw do
   devise_for :users
 
-  root to: 'users#dashboard'
+  root to: 'entries#index'
 
   resources :entries
 
@@ -14,6 +14,5 @@ Ssw2::Application.routes.draw do
               #            PATCH  /entries/:id(.:format)         entries#update
               #            PUT    /entries/:id(.:format)         entries#update
               #            DELETE /entries/:id(.:format)         entries#destroy
-  
-  
+
 end

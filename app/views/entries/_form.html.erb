@@ -1,0 +1,16 @@
+<%= form_for @entry do |f| %>
+	<%= f.label :date %>
+	<%= f.date_select :date %>
+	<br />
+	<%= f.label '# Cigarettes Smoked' %>
+	<%= f.text_field :quantity %>
+	<br />
+	<%= f.label 'Hours Slept (Previous Night)' %>
+	<%= f.text_field :hrs_slept %>
+	<br />
+	<%= f.label 'Temperature' %>
+	<%= f.text_field :temp %>
+	<br />
+
+	<%= f.submit %>
+<% end %>

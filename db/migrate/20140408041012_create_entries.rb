@@ -3,7 +3,7 @@ class CreateEntries < ActiveRecord::Migration
     create_table :entries do |t|
     	t.datetime :date
     	t.integer :quantity, default: 0
-    	t.integer :hrs_slept
+    	t.integer :hrs_slept, default: 0
     	t.integer :temp
     	t.integer :user_id
 

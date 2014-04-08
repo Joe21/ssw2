@@ -1,0 +1,27 @@
+<h1>Welcome <%= current_user.name %></h1>
+Your Zipcode is set as <%= current_user.zipcode %>
+<br />
+<br />
+
+<% if @my_log.entries.count > 0 %>
+	<table>
+		<thead>
+			<tr>Date</tr>
+			<tr># Smoked</tr>
+			<tr>Hours Slept</tr>
+			<tr>Temperature</tr>
+		</thead>
+		<% @my_log.each do |entry| %>
+		<tbody>
+			<td><%= entry.date.strftime("%m/%d/%Y")%></td>
+			<td><%= entry.quantity %></td>
+			<td><%= entry.hrs_slept %></td>
+			<td><%= entry.temp %></td>
+		</tbody>
+		<% end %>
+	</table>
+<% end %>
+
+
+
+<%= button_to "New Entry", new_entry_path, method: 'get' %>

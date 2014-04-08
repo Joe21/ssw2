@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140408041012) do
   create_table "entries", force: true do |t|
     t.datetime "date"
     t.integer  "quantity",   default: 0
-    t.integer  "hrs_slept"
+    t.integer  "hrs_slept",  default: 0
     t.integer  "temp"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140408041012) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
+    t.integer  "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
