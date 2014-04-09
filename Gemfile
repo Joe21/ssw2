@@ -6,9 +6,11 @@ gem 'httparty'
 gem 'pry'
 gem 'devise'
 
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+
+# twitter bootstrap
+# gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
