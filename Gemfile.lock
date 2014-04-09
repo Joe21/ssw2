@@ -164,8 +164,4 @@ DEPENDENCIES
   sdoc
   sqlite3
   turbolinks
-<<<<<<< HEAD
-=======
-  twitter-bootstrap-rails!
->>>>>>> d7fb4efd9e701426fa67257ce6bfe204926afcd0
   uglifier (>= 1.3.0)
