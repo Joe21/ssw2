@@ -6,22 +6,26 @@ Your Zipcode is set as <%= current_user.zipcode %>
 <% if @my_log.entries.count > 0 %>
 	<table>
 		<thead>
-			<tr>Date</tr>
-			<tr># Smoked</tr>
-			<tr>Hours Slept</tr>
-			<tr>Temperature</tr>
-		</thead>
+			<tr>
+				<th>Date</th>
+				<th># Smoked</th>
+				<th>Hours Slept</th>
+				<th>Temperature</th>
+			</tr>
+		<thead>
 		<% @my_log.each do |entry| %>
 		<tbody>
 			<td><%= entry.date.strftime("%m/%d/%Y")%></td>
 			<td><%= entry.quantity %></td>
 			<td><%= entry.hrs_slept %></td>
 			<td><%= entry.temp %></td>
+			<td class="no-border"><%=button_to "Edit", edit_entry_path(entry.id), class:'btn btn-info', method: 'get' %></td>
+			<td class="no-border"><%=button_to "Delete", entry_path(entry.id), method: 'delete', class:'btn btn-danger' %></td>
 		</tbody>
 		<% end %>
 	</table>
-<% end %>
+<% end %><br />
 
 
 
-<%= button_to "New Entry", new_entry_path, method: 'get' %>
+<%= button_to "New Entry", new_entry_path, method: 'get', class:'btn btn-warning' %>

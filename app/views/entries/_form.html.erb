@@ -1,16 +1,24 @@
-<%= form_for @entry do |f| %>
-	<%= f.label :date %>
-	<%= f.date_select :date %>
+<%= form_for @entry, {class: 'form-horizontal'} do |f| %>
+	<div class="control-group">
+		<%= f.label :date, {class: 'control-label'} %>
+		<div class="controls"><%= f.date_select :date %></div>
+	</div>
+	<div class="control-group">
+		<%= f.label '# Cigarettes Smoked', {class: 'control-label'}%>
+		<div class="controls"><%= f.text_field :quantity %></div>
+	</div>
+	<div class="control-group">
+		<%= f.label 'Hours Slept (Previous Night)', {class: 'control-label'} %>
+		<div class="controls"><%= f.text_field :hrs_slept %></div>
+	</div>
+	<div class="control-group">
+		<%= f.label 'Temperature (Based on your zipcode only upon creation)', {class: 'control-label'} %>
+		<div class="controls"><%= f.text_field :temp %></div>
+	</div>
+	<div class="control-group">
+		<%= f.submit %>
+	</div><br />
 	<br />
-	<%= f.label '# Cigarettes Smoked' %>
-	<%= f.text_field :quantity %>
 	<br />
-	<%= f.label 'Hours Slept (Previous Night)' %>
-	<%= f.text_field :hrs_slept %>
-	<br />
-	<%= f.label 'Temperature' %>
-	<%= f.text_field :temp %>
-	<br />
-
-	<%= f.submit %>
+	<%= button_to :Back %>
 <% end %>

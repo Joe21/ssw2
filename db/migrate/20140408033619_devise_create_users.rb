@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :name
       t.integer :zipcode
+      t.integer :counter, default: 0
       t.timestamps
     end
 

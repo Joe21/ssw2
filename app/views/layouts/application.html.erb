@@ -37,42 +37,58 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Ssw2</a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+    <div id="wrap">
+      <div class="navbar navbar-fluid-top">
+        <div class="navbar-inner">
+          <div class="container-fluid">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">SSW 2.0</a>
+            <div class="container-fluid nav-collapse">
+              <ul class="nav">
+                <% if user_signed_in? %>
+                  <li><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+                <% else %>
+                  <li><%= link_to "Home", root_path %></li>
+                  <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+                <% end %>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
+
+      <div class="container-fluid" id="main-container">
+        <% if notice %>  
+          <div id="login-alert-container">
+            <p class="alert alert-notice"><strong><%= notice %></strong></p>
+          </div>
+        <% end %>
+          
+        <% if alert %>
+          <div id="login-alert-container">
+            <p class="alert alert-error"><strong><%= alert %></strong></p>
+          </div>
+        <% end %>
+
+        <%= yield %>
+
+      </div> <!-- /container -->
+    </div> <!-- /wrap -->
+
+  <% if user_signed_in? %>
+    <div id="footer">
+      <div id="counter-container" class="row">
+        <div class="span2">Smoke Counter: <span id="count"><%= current_user.counter %></span></div>
+        <div class="span2"><%= button_to "+", add_path(current_user.id) %></div>
+        <div class="span8"></div>
+      </div>
     </div>
-
-    <div class="container-fluid">
-      <% if notice %>  
-        <div id="login-alert-container">
-          <p class="alert alert-notice"><strong><%= notice %></strong></p>
-        </div>
-      <% end %>
-        
-      <% if alert %>
-        <div id="login-alert-container">
-          <p class="alert alert-error"><strong><%= alert %></strong></p>
-        </div>
-      <% end %>
-      
-      <%= yield %>
-    </div> <!-- /container -->
-
+  <% end %>
   </body>
 </html>

@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 	before_filter :authenticate_user!
 
+	def add_counter
+	end
 
-
-
+	def minus_counter
+	end
 
 # Establish strong params for user model
 	private

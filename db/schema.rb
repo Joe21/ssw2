@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20140408041012) do
     t.string   "last_sign_in_ip"
     t.string   "name"
     t.integer  "zipcode"
+    t.integer  "counter"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

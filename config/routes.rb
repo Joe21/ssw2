@@ -1,18 +1,8 @@
 Ssw2::Application.routes.draw do
   devise_for :users
-
   root to: 'entries#index'
-
   resources :entries
 
-              #       root GET    /                              users#dashboard
-              #    entries GET    /entries(.:format)             entries#index
-              #            POST   /entries(.:format)             entries#create
-              #  new_entry GET    /entries/new(.:format)         entries#new
-              # edit_entry GET    /entries/:id/edit(.:format)    entries#edit
-              #      entry GET    /entries/:id(.:format)         entries#show
-              #            PATCH  /entries/:id(.:format)         entries#update
-              #            PUT    /entries/:id(.:format)         entries#update
-              #            DELETE /entries/:id(.:format)         entries#destroy
-
+  post '/users/:id/add_counter' => 'users#add_counter', as: 'add'
+  post '/users/:id/minus_counter' => 'users#minus_counter', as: 'minus'
 end

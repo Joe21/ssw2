@@ -4,7 +4,7 @@ class EntriesController < ApplicationController
 	include HTTParty
 
 	def index
-		@my_log = current_user.entries
+		@my_log = current_user.entries.sort! { |a, b| a.date <=> b.date }
 	end
 
 	def new
@@ -21,6 +21,9 @@ class EntriesController < ApplicationController
 		temp = data['rss']["channel"]['item']['condition']['temp']
 
 		@entry = Entry.new(date: Time.now.strftime("%d/%m/%Y"), temp: temp)
+
+		# Note: Bootstrap does not natively integrate the html used in the form_for helper.
+		# Address this later via simple form gem or manual html forms. Leave for now.
 	end
 
 	def create
@@ -28,12 +31,25 @@ class EntriesController < ApplicationController
 		@entry.user_id = current_user.id
 		@entry.save
 
-		puts '=============='
-		puts @entry
-		puts '=============='
-
 		redirect_to root_path
 	end
+
+	def edit
+		@entry = Entry.find(params[:id])
+	end
+
+	def update
+		entry = Entry.find(params[:id])
+		entry.update_attributes(entry_params)
+		redirect_to root_path
+	end
+
+	def destroy
+		entry = Entry.find(params[:id])
+		entry.destroy
+		redirect_to root_path
+	end
+
 
 # Establish strong params for user model
 	private
