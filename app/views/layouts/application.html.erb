@@ -83,10 +83,11 @@
 
   <% if user_signed_in? %>
     <div id="footer">
-      <div id="counter-container" class="row">
-        <div class="span2">Smoke Counter: <span id="count"><%= current_user.counter %></span></div>
-        <div class="span2"><%= button_to "+", add_path(current_user.id) %></div>
-        <div class="span8"></div>
+      <div id="counter-container">
+        <span id="color-me">Smoke Counter</span> <span id="count"><%= current_user.counter %></span>
+      <%= button_to "+", add_path %>
+      <%= button_to "-", minus_path %>
+      <%= button_to "Reset", reset_path %>
       </div>
     </div>
   <% end %>

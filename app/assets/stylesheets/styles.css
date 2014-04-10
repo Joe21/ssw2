@@ -49,9 +49,9 @@ body {
 }
 
 #counter-container {
-	bottom: -12px;
+	bottom: -15px;
 	font-size: 1.2em;
-	padding-left: 25px;
+	padding-left: 10px;
 	position: relative;
 }
 
@@ -60,20 +60,32 @@ body {
 	border: 1px solid white;
 	border-radius: 2px;
 	color: black;
+	font-size: 1.2em;
 	padding: 0 5px;
 }
 
-#counter-container {
+#counter-container form {
+	display: inline;
+	margin-left: 10px;
 }
 
-/*#counter-container form {
+#counter-container form div {
+	display: inline;
 }
 
 #counter-container form input {
-	margin-left: 10px;
 	width: 27px;
 }
-*/
+
+#counter-container form:nth-child(5) input{
+	text-align: center;
+	width: 54px;
+}
+
+#color-me {
+	color: #3366FF;
+	text-shadow: 1px 1px #2E2E1F;
+}
 
 /* Table Styling */
 table, thead, th, tr, td {
