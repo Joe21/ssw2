@@ -5,22 +5,11 @@ gem 'rails', '4.0.0'
 gem 'httparty'
 gem 'pry'
 gem 'devise'
-
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
-
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
@@ -36,7 +25,6 @@ end
 
 group :test do
 	gem 'rspec-rails', '~> 2.0'
-	gem 'sqlite3', '~> 1.3.9'
 end
 
 group :production do
