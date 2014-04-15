@@ -13,4 +13,5 @@ SSW 2.0 can be found at [http://ssw2.herokuapp.com](http://ssw2.herokuapp.com).
 * Rspec Rails
 * HTTParty
 * Yahoo Weather API
-* Twitter Bootstrap with responsive layout
+* Twitter Bootstrap
+* Fully responsive layout including tables for mobile screens
