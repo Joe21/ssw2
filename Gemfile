@@ -31,7 +31,7 @@ group :doc do
 end
 
 group :develpment do
-	gem 'sqlite3', '~> 1.3.9'
+	# gem 'sqlite3', '~> 1.3.9'
 end
 
 group :test do
