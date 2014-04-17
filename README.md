@@ -15,3 +15,4 @@ SSW 2.0 can be found at [http://ssw2.herokuapp.com](http://ssw2.herokuapp.com).
 * Yahoo Weather API
 * Twitter Bootstrap
 * Fully responsive layout including tables for mobile screens
+* New Relic App Performance Monitoring w/ Scheduler to reduce dyno idle time
